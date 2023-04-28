@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer</title>
+    <link rel="stylesheet" href="assets/boostrap/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fasthand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="assets/fontAwesome/fontawesome-free-6.4.0-web/css/all.css"
+    />
+    <link rel="stylesheet" href="assets/cus_style/cus_style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="customer.html"
+        ><i><i class="fa-solid fa-shop"></i>POS SYSTEM</i>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="customer.html"
+            ><i class="fa-solid fa-user-plus"></i>CUSTOMER
+          </a>
+          <a class="nav-item nav-link" href="assets/pages/item_page/item.html"
+            ><i class="fa-solid fa-sitemap"></i>ITEMS</a
+          >
+          <a class="nav-item nav-link" href="assets/pages/order_page/order.html"
+            ><i class="fa-solid fa-cart-shopping"></i></i>ORDERS</a
+          >
+        </div>
+      </div>
+    </nav>
+    <section id="main-sec" class="container">
+      <form action="">
+        <label class="lbl" for="id">Customer ID:</label><br />
+        <input type="text" id="id" name="customer_id" placeholder="Id" /><br />
+        <label class="lbl" for="name">Customer Name:</label><br />
+        <input
+          type="text"
+          id="name"
+          name="customer_name"
+          placeholder="Name"
+        /><br />
+        <label class="lbl" for="address">Customer Address:</label><br />
+        <input
+          type="text"
+          id="address"
+          name="customer_address"
+          placeholder="Address"
+        /><br />
+        <label class="lbl" for="salary">Salary:</label><br />
+        <input type="text" id="salary" name="salary" placeholder="Salary" />
+      </form>
+      <section id="btn-sec">
+        <h1 id="h1">
+          <strong><u>CUSTOMER MANAGE</u> </strong>
+        </h1>
+        <div id="btn-section">
+          <label class="lbl search-lbl" for="search">Search Customer</label
+          ><br />
+          <input type="text" id="search" /><br />
+          <button class="btnn btn-search">SEARCH</button><br />
+          <div class="crud-btnn">
+            <button class="btnn btn-save">SAVE</button>
+            <button class="btnn btn-update">UPDATE</button>
+            <button class="btnn btn-delete">DELETE</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <table class="table table-striped">
+      <thead>
+        <tr class="table_headers">
+          <th scope="col">CUSTOMER ID</th>
+          <th scope="col">CUSTOMER NAME</th>
+          <th scope="col">ADDRESS</th>
+          <th scope="col">SALARY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tbl-row">
+          <th scope="row">S001</th>
+          <td>Kamal</td>
+          <td>Dambulla</td>
+          <td>25000.00</td>
+        </tr>
+        <tr class="tbl-row">
+          <th scope="row">S002</th>
+          <td>Nethsra</td>
+          <td>badulla</td>
+          <td>50000.00</td>
+        </tr>
+        <tr class="tbl-row">
+          <th scope="row">S003</th>
+          <td>Harshana</td>
+          <td>Dhabana</td>
+          <td>20000.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
