@@ -15,7 +15,7 @@ form {
 }
 
 body {
-  background-image: url("../images/POS\ 4.jpg");
+  background-image: url("../../images/POS\ 4.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -141,6 +141,23 @@ i {
 .crud-btnn {
   display: flex;
   margin-top: 25px;
+}
+
+.total {
+  display: flex;
+  color: red;
+  margin: -20px 0 0 5px;
+}
+
+#h1-order {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 3vw;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#btn-section-order {
+  margin: 13px 0 0 17px;
 }
 
 @media (max-width: 861px) {
