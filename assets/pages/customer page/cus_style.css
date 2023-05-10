@@ -27,8 +27,20 @@ input {
   height: 28px;
 }
 
+#combo {
+  width: 300px;
+}
+
 .table {
   margin-top: 60px;
+}
+
+#table-order {
+  margin-top: 20px;
+}
+
+.qty-text {
+  width: 100px;
 }
 
 .table_headers {
@@ -141,6 +153,10 @@ i {
 .crud-btnn {
   display: flex;
   margin-top: 25px;
+}
+
+#crud {
+  margin-top: -20px;
 }
 
 .total {
