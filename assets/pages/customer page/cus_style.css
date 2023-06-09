@@ -150,6 +150,11 @@ i {
   padding-right: 8px;
 }
 
+tbody{
+  background-color: #8a938b;
+  border: none;
+}
+
 .crud-btnn {
   display: flex;
   margin-top: 25px;

@@ -15,7 +15,6 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/pages/customer page/cus_style.css" />
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -80,17 +79,17 @@
           <label class="lbl search-lbl" for="search">Search Customer</label
           ><br />
           <input type="text" id="search" /><br />
-          <button class="btnn btn-search">SEARCH</button><br />
+          <button class="btnn btn-search cus-btn-search">SEARCH</button><br />
           <div class="crud-btnn">
-            <button id="add" class="btnn btn-save">SAVE</button>
-            <button class="btnn btn-update">UPDATE</button>
-            <button class="btnn btn-delete">DELETE</button>
+            <button id="add" class="btnn btn-save cus-btn-save">SAVE</button>
+            <button class="btnn btn-update cus-btn-update">UPDATE</button>
+            <button class="btnn btn-delete cus-btn-delete">DELETE</button>
           </div>
         </div>
       </section>
     </section>
 
-    <table class="table table-striped">
+    <table  class="table table-striped cus-table">
       <thead>
         <tr class="table_headers">
           <th scope="col">CUSTOMER ID</th>
@@ -99,25 +98,8 @@
           <th scope="col">SALARY</th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="tbl-row">
-          <th scope="row">S001</th>
-          <td>Kamal</td>
-          <td>Dambulla</td>
-          <td>25000.00</td>
-        </tr>
-        <tr class="tbl-row">
-          <th scope="row">S002</th>
-          <td>Nethsra</td>
-          <td>badulla</td>
-          <td>50000.00</td>
-        </tr>
-        <tr class="tbl-row">
-          <th scope="row">S003</th>
-          <td>Harshana</td>
-          <td>Dhabana</td>
-          <td>20000.00</td>
-        </tr>
+      <tbody id="customer-table">
+        
       </tbody>
     </table>
 </section>
@@ -160,15 +142,15 @@
             <input type="text" id="search" placeholder="Search here" /><br />
             <button class="btnn btn-search">SEARCH</button><br />
             <div class="crud-btnn">
-              <button class="btnn btn-save">SAVE</button>
-              <button class="btnn btn-update">UPDATE</button>
-              <button class="btnn btn-delete">DELETE</button>
+              <button class="btnn btn-save itm-btn-save">SAVE</button>
+              <button class="btnn btn-update itm-btn-update">UPDATE</button>
+              <button class="btnn btn-delete itm-btn--delete">DELETE</button>
             </div>
           </div>
         </section>
       </section>
 
-      <table class="table table-striped">
+      <table id="item-table" class="table table-striped">
         <thead>
           <tr class="table_headers">
             <th scope="col">ITEM CODE</th>
@@ -294,31 +276,15 @@
     </section>
     </section>
     <!-- order page -->
+   
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
     
-    <script>
-$("#customerContent").css("display","block")
-$("#itemsContent").css("display","none")
-$("#orderContent").css("display","none")
+    <script src="assets/js/js.js" ></script>
+    <script src="controller/customer_controller.js" type="module"></script>
+    <script src="database/db.js" type="module"></script>
 
-$("#customer-btn").click(function(){
-    $("#customerContent").css("display","block")
-$("#itemsContent").css("display","none")
-$("#orderContent").css("display","none")
-})
-
-$("#item-btn").click(function(){
-      $("#customerContent").css("display","none")
-$("#itemsContent").css("display","block")
-$("#orderContent").css("display","none")
-})
-
-$("#order-btn").click(function(){
-      $("#customerContent").css("display","none")
-$("#itemsContent").css("display","none")
-$("#orderContent").css("display","block")
-})
-
-
-     </script>
+     
   </body>
 </html>
