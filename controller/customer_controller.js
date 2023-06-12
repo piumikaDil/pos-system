@@ -124,3 +124,28 @@ export class CustomerController {
 }
 new CustomerController();
 
+$("#id").on("keydown", function (event) {
+    if (event.key === "Enter") {
+        $("#name").focus();
+    }
+});
+
+$("#name").on("keydown", function (event) {
+    if (event.key === "Enter") {
+        $("#address").focus();
+    }
+});
+
+$("#address").on("keydown", function (event) {
+    if (event.key === "Enter") {
+        $("#salary").focus();
+    }
+});
+
+$("#salary").on("keydown", function (event) {
+    if (event.key === "Enter") {
+        $(".cus-btn-save").focus();
+    }
+});
+
+
