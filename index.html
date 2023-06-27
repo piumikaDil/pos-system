@@ -123,7 +123,7 @@
         </tr>
       </thead>
       <tbody id="item-table-body">
-       
+
       </tbody>
     </table>
   </section>
@@ -137,34 +137,36 @@
         <h1 id="h1-order">
           <strong><u>PLACE ORDER</u> </strong>
         </h1>
+        <input type="text" id="order-id" placeholder="Order ID" /><br />
+
         <label class="lbl" for="code">Customer Id:</label><br />
         <select name="example" id="combo" class="cmb-customer-id">
-          <option value="A">Cus_ID</option>
+          <option selected>Cus_ID</option>
         </select><br />
         <label class="lbl" for="name">Customer Name:</label><br />
-        <input type="text" id="name" name="item_name" placeholder="Name" /><br />
+        <input type="text" id="cus_name" name="item_name" placeholder="Name" /><br />
         <label class="lbl" for="price">Address:</label><br />
-        <input type="text" id="price" name="price" placeholder="Address" /><br />
+        <input type="text" id="cus_address" name="price" placeholder="Address" /><br />
       </form>
       <section id="btn-sec">
         <div id="btn-section-order">
           <label class="lbl search-lbl" for="search">Item Code</label><br />
 
-          <select name="example" id="combo">
-            <option value="A">code</option>
+          <select name="example" id="combo" class="cmb-item-code">
+            <option selected>code</option>
           </select><br />
-          <label class="lbl" for="search">Item Name</label><br />
-          <input type="text" id="search" placeholder="Name" /><br />
-          <label class="lbl" for="search">Price</label><br />
-          <input type="text" id="search" placeholder="Price" /><br />
-          <label class="lbl" for="search">Qty On Hand</label><br />
-          <input type="text" id="search" placeholder="QTY On Hand" /><br />
+          <label class="lbl" for="item_name">Item Name</label><br />
+          <input type="text" id="item_name" placeholder="Name" /><br />
+          <label class="lbl" for="item_price">Price</label><br />
+          <input type="text" id="item_price" placeholder="Price" /><br />
+          <label class="lbl" for="qty">Qty On Hand</label><br />
+          <input type="text" id="qty-qty" placeholder="QTY On Hand" /><br />
           <label class="lbl" for="search">QTY</label>
           <div class="crud-btnn" id="crud">
-            <input class="qty-text" type="text" id="search" placeholder="QTY" /><br />
+            <input class="qty-text" type="text" id="current-qty" placeholder="QTY" /><br />
 
-            <button class="btnn btn-update">ADD</button>
-            <button class="btnn btn-delete">DELETE</button>
+            <button class="btnn btn-update" id="addToCart">ADD</button>
+            <button class="btnn btn-delete delete-order">BUY</button>
           </div>
         </div>
       </section>
@@ -174,35 +176,19 @@
       <thead>
         <tr class="table_headers">
           <th scope="col">ITEM CODE</th>
-          <th scope="col">ITEM NAME</th>
-          <th scope="col">ITEM PRICE</th>
           <th scope="col">QTY</th>
+          <th scope="col">PRICE</th>
+          <th scope="col">TOTAL</th>
+          <th scope="col">ACTION</th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="tbl-row">
-          <th scope="row">I001</th>
-          <td>Laptop</td>
-          <td>250000.00</td>
-          <td>25</td>
-        </tr>
-        <tr class="tbl-row">
-          <th scope="row">I002</th>
-          <td>Dekstop</td>
-          <td>30000.00</td>
-          <td>50</td>
-        </tr>
-        <tr class="tbl-row">
-          <th scope="row">I003</th>
-          <td>Mouse</td>
-          <td>750.00</td>
-          <td>200</td>
-        </tr>
+      <tbody id="table-cart">
+
       </tbody>
     </table>
     <section class="total">
       <h1>Total :</h1>
-      <h1>00.00</h1>
+      <h1 id="total">00.00</h1>
     </section>
   </section>
   <!-- order page -->
@@ -214,6 +200,8 @@
   <script src="assets/js/js.js"></script>
   <script src="controller/item_controller.js" type="module"></script>
   <script src="controller/customer_controller.js" type="module"></script>
+  <script src="controller/order_controller.js" type="module"></script>
+
   <script src="database/db.js" type="module"></script>
 
 

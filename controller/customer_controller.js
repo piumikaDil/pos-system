@@ -8,10 +8,60 @@ export class CustomerController {
         $(".cus-btn-save").click(this.handleSaveCustomerValidation.bind(this));
         $(".cus-btn-update").click(this.handleUpdateCustomer.bind(this));
         $(".cus-btn-delete").click(this.handleDeleteCustomer.bind(this));
+        $(".cus-btn-search").click(this.search.bind(this))
+            
+        
         this.handleLoadCustomer();
         this.tableSelectedRaw();
 
+        $("#id").on("keydown", function (event) {
+            if (event.key === "Enter") {
+                $("#name").focus();
+            }
+        });
+
+        $("#name").on("keydown", function (event) {
+            if (event.key === "Enter") {
+                $("#address").focus();
+            }
+        });
+
+        $("#address").on("keydown", function (event) {
+            if (event.key === "Enter") {
+                $("#salary").focus();
+            }
+        });
+
+        $("#salary").on("keydown", function (event) {
+            if (event.key === "Enter") {
+                $(".cus-btn-save").focus();
+            }
+        });
+
+
     }
+
+    search(){
+        let cusId = $("#search").val();
+        let response = this.customerSearch(cusId);
+        console.log(response);
+        if (response) {
+            $("#txtId").val(response.id);
+            $("#txtName").val(response.name);
+            $("#txtAddress").val(response.address);
+        } else {
+            alert("This customer not exists yet!");
+        }
+    }
+
+    customerSearch(cId) {
+        for (let i = 0; i < getCustomerDB.length; i++) {
+            if (getCustomerDB[i].cus_id == cId) {
+                return getCustomerDB[i];
+            }
+        }
+    }
+
     handleLoadCustomer() {
         let customer_data_arr = getCustomerDB();
         $('#customer-table').empty();
@@ -33,20 +83,21 @@ export class CustomerController {
 
     handleSaveCustomerValidation() {
 
-        var customer_id = $("#id").val();
-        var customer_first_name = $("#name").val();
-        var customer_last_name = $("#address").val();
-        var customer_address = $("#salary").val();
+        var id = $("#id").val();
+        var name = $("#name").val();
+        var address = $("#address").val();
+        var salary = $("#salary").val();
 
+        const regexNo = /^(0|[1-9]\d*)$/
         const regexNumber = /^\d+$/;
-        if (!regexNumber.test(customer_id)) {
+        if (!regexNumber.test(id)) {
             alert("Invalid Id");
-        } else if (!customer_first_name) {
-            alert("Invalid First Name");
-        } else if (!customer_last_name) {
-            alert("Invalid Last Name");
-        } else if (!customer_address) {
+        } else if (!name) {
+            alert("Invalid Name");
+        } else if (!address) {
             alert("Invalid Address");
+        } else if (!regexNo.test(salary)) {
+            alert("Invalid Salary");
         } else {
             this.handleSaveCustomer();
         }
@@ -124,28 +175,8 @@ export class CustomerController {
 }
 new CustomerController();
 
-$("#id").on("keydown", function (event) {
-    if (event.key === "Enter") {
-        $("#name").focus();
-    }
-});
 
-$("#name").on("keydown", function (event) {
-    if (event.key === "Enter") {
-        $("#address").focus();
-    }
-});
 
-$("#address").on("keydown", function (event) {
-    if (event.key === "Enter") {
-        $("#salary").focus();
-    }
-});
 
-$("#salary").on("keydown", function (event) {
-    if (event.key === "Enter") {
-        $(".cus-btn-save").focus();
-    }
-});
 
 

@@ -1,5 +1,7 @@
 const data = "DATA";
 const itemData = "ITEM_DATA";
+const placeData = "PLACE_DATA";
+
 
 
 
@@ -88,3 +90,19 @@ export function deleteItem(item) {
     item_data_arr.splice(index, 1);
     localStorage.setItem(itemData, JSON.stringify(item_data_arr));
 }
+
+////////////////////////////////////order part//////////////////////////////////////////////
+
+export function placeOrder(order) {
+    let pre_data = localStorage.getItem(placeData);
+    let data_arr = [];
+
+    if (pre_data) {
+        data_arr = JSON.parse(pre_data);
+    }
+    data_arr.push(order);
+    localStorage.setItem(placeData, JSON.stringify(data_arr));
+
+
+}
+
